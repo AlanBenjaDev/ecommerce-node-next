@@ -12,6 +12,9 @@ export default function CarritoList() {
   const [token, setToken] = useState<string | null>(null);
   const [isTokenChecked, setIsTokenChecked] = useState(false);
 
+const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
+
   useEffect(() => {
     if (typeof window !== "undefined") {
      const storedToken = localStorage.getItem("accessToken");
@@ -25,7 +28,7 @@ export default function CarritoList() {
 
     const fetchCart = async () => {
       try {
-        const res = await fetch("http://localhost:4000/api/carrito/Ver", {
+        const res = await fetch(`${API_URL}/api/carrito/Ver`, {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,
