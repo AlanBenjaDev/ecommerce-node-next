@@ -136,8 +136,6 @@ router.post(
         [userData.id, refreshToken, req.ip || null, req.headers["user-agent"] || null]
       );
 
-      // Enviar refresh token como cookie httpOnly (frontend no puede leerla)
-      // secure: true en producción con HTTPS
       res
         .cookie("refreshToken", refreshToken, {
           httpOnly: true,

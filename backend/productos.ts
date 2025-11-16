@@ -6,7 +6,7 @@ import { autenticarToken } from './autenticacion.js';
 
 
 import { WebSocketServer, WebSocket } from "ws";
-import    { upload }  from "./upload.js";
+import     upload   from "./upload.js";
 
 declare global {
   namespace Express {

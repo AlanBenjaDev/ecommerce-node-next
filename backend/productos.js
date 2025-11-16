@@ -2,7 +2,7 @@ import express from "express";
 import db from "./db.js";
 import { autenticarToken } from './autenticacion.js';
 import { WebSocket } from "ws";
-import { upload } from "./upload.js";
+import upload from "./upload.js";
 var Categorias;
 (function (Categorias) {
     Categorias["tecnologia"] = "tecnologia";

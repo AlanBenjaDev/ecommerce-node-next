@@ -64,8 +64,6 @@ router.post("/login", formLimiter, [
         const refreshToken = jwt.sign({ id: userData.id }, REFRESH_TOKEN_SECRET, { expiresIn: "30d" });
         await db.query(`INSERT INTO sesiones (usuario_id, token, expires_at, ip, user_agent)
          VALUES (?, ?, DATE_ADD(NOW(), INTERVAL 30 DAY), ?, ?)`, [userData.id, refreshToken, req.ip || null, req.headers["user-agent"] || null]);
-        // Enviar refresh token como cookie httpOnly (frontend no puede leerla)
-        // secure: true en producción con HTTPS
         res
             .cookie("refreshToken", refreshToken, {
             httpOnly: true,

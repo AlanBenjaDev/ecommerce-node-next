@@ -14,8 +14,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT;
+const frontend_url = process.env.URL_FRONTEND;
 app.use(cors({
-    origin: 'http://192.168.0.108:3000',
+    origin: frontend_url,
     credentials: true
 }));
 import cookieParser from 'cookie-parser';
