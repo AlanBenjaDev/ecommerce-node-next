@@ -117,7 +117,7 @@ router.post(
         return res.status(400).json({ error: "Faltan campos obligatorios" });
       }
 
-    const imagen = `uploads/${req.file.filename}`; 
+    const imagen = req.file.path; 
 
 
      

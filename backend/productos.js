@@ -65,7 +65,7 @@ router.post("/vendedor", autenticarToken, upload.single("imagen"), async (req, r
         if (!producto || !descripcion || !precio || !stock || !categoria) {
             return res.status(400).json({ error: "Faltan campos obligatorios" });
         }
-        const imagen = `uploads/${req.file.filename}`;
+        const imagen = req.file.path;
         const [result] = await db.query(`INSERT INTO productos (producto, descripcion, precio, stock, categoria, img_url, usuario_id)
          VALUES (?, ?, ?, ?, ?, ?, ?)`, [producto, descripcion, Number(precio), Number(stock), categoria, imagen, usuario_id]);
         const [rows] = await db.query("SELECT * FROM productos WHERE id = ?", [result.insertId]);

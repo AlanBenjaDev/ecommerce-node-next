@@ -12,11 +12,11 @@ cloudinary.config({
 
 const storage = new CloudinaryStorage({
   cloudinary,
-  params: {
-    folder: 'ecommerce',          
-    allowed_formats: ['jpg','jpeg','png','webp'],
-    transformation: [{ width: 500, height: 500, crop: 'limit' }]
-  } as any 
+  params: async (req, file) => ({
+    folder: "ecommerce",
+    allowed_formats: ["jpg", "jpeg", "png", "webp"],
+    transformation: [{ width: 500, height: 500, crop: "limit" }]
+  })
 });
 
 export { cloudinary, storage };
