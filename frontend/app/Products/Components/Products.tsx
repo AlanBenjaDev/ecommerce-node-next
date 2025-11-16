@@ -58,7 +58,7 @@ const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
     <Link key={product.id} href={`/Products/${product.id}`}>
       <div className="bg-white p-5 rounded-2xl shadow-md hover:shadow-lg transition-all flex flex-col items-center cursor-pointer text-[#1A73E8]">
         <img
-          src={`http://localhost:4000/${product.img_url}`}
+          src={`${product.img_url}`}
           alt={product.producto}
           className="w-48 h-48 object-cover rounded-lg mb-4"
         />
