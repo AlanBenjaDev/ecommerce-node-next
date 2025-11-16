@@ -59,7 +59,7 @@ const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
       <div className="bg-white p-5 rounded-2xl shadow-md hover:shadow-lg transition-all flex flex-col items-center cursor-pointer text-[#1A73E8]">
         <img
           src={`${product.img_url}`}
-          alt={product.producto}
+          alt="tu hermana"
           className="w-48 h-48 object-cover rounded-lg mb-4"
         />
         <h2 className="text-sm font-semibold text-gray-800 hover:text-[#1A73E8] transition-all ">{product.producto}</h2>
