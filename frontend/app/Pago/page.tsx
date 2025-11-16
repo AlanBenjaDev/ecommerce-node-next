@@ -10,7 +10,7 @@ interface CheckoutProps {
 }
 
 initMercadoPago(
-  process.env.MP_PUBLIC_KEY || "APP_USR-4e856bd1-5954-4f3f-b737-fcbf76828de5",
+  process.env.MP_PUBLIC_KEY || "",
   { locale: "es-AR" }
 );
 
@@ -67,7 +67,7 @@ const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:4000/create_preference", {
+      const res = await fetch(`${API_URL}/create_preference`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

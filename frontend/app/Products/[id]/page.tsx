@@ -122,7 +122,7 @@ const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
   return (
     <div className="max-w-4xl mx-auto p-6 flex flex-col md:flex-row gap-6">
       <img
-        src={`http://localhost:4000/${product.img_url}`}
+         src={`${product.img_url}`}
         alt={product.producto}
         className="w-full md:w-1/2 rounded-lg"
       />

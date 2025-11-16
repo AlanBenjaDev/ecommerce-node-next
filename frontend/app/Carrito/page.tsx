@@ -84,7 +84,7 @@ export default function CarritoList() {
             className="bg-white p-5 rounded-2xl shadow-md hover:shadow-lg transition-all flex flex-col items-center cursor-pointer"
           >
             <img
-              src={`http://localhost:4000/${cart.img_url}`}
+               src={`${cart.img_url}`}
               alt={cart.producto}
               className="w-32 h-32 object-cover rounded-lg mb-4"
             />

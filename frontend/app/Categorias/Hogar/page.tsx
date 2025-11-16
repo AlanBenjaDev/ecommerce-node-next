@@ -62,7 +62,7 @@ const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
           {productos.map((p) => (
             <div key={p.id} className="border rounded-lg p-3 shadow-md">
               <img
-                src={`http://localhost:4000/${p.img_url}`}
+                 src={`${p.img_url}`}
                 alt={p.producto}
                 className="w-full h-40 object-cover rounded-md mb-2"
               />
